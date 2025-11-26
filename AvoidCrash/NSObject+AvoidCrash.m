@@ -103,6 +103,8 @@ static NSMutableArray *noneSelClassStringPrefixs;
     
     NSMethodSignature *ms = [self avoidCrashMethodSignatureForSelector:aSelector];
     
+    if (ms) return ms;
+    
     BOOL flag = NO;
     if (ms == nil) {
         for (NSString *classStr in noneSelClassStrings) {
